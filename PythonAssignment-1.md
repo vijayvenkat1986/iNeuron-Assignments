@@ -522,3 +522,205 @@ if strn == rev_str :
     print("the given string is palindrome")
 else:
     print("the given string is not palindrome")
+Q87. Write a Python program to remove i'th element from a string.
+
+
+def remove_char(s, i):
+    a = s[ : i]
+    b = s[i + 1: ]
+    return a+b
+string = "ineuron"
+i = int(input("Enter the element to be removed:"))
+print(remove_char(string,i-1))
+
+
+Q88. Write a Python program to check if a substring is present in a given string.
+
+def check_str(s):
+    sentence = "iam learning Bigdata from ineuron "
+    if s in sentence:
+        return("the substring is present")
+    else:
+        return("the substring is not present")
+        
+        
+string  = input("Enter the string:")
+print(check_str(string))
+
+Q89. Write a Python program to find words which are greater than given length k.
+
+sentence = "iam learning Bigdata from ineuron "
+k = int(input("enter a number : "))
+lst =[]
+for i in sentence.split():
+    if len(i) > k :
+        lst.append(i)
+print("words which are greater than given length k are :",lst)
+    
+
+Q90. Write a Python program to extract unquire dictionary values.
+
+test_dict = {'gfg' : [5, 6, 7, 8],
+            'is' : [10, 11, 7, 5],
+            'best' : [6, 12, 10, 8],
+            'for' : [1, 2, 5]}
+ 
+print("The original dictionary is : " + str(test_dict))
+ 
+x=list(test_dict.values())
+y=[]
+res=[]
+for i in x:
+    y.extend(i)
+for i in y:
+    if i not in res:
+        res.append(i)
+res.sort()
+ 
+print("The unique values list is : " + str(res))
+
+Q91. Write a Python program to merge two dictionary.
+
+dict_1 = {1: 'a', 2: 'b'}
+dict_2 = {2: 'c', 4: 'd'}
+dict_3 = dict_2.copy()
+dict_3.update(dict_1)
+print(dict_3)
+
+Q92. Write a Python program to convert a list of tuples into dictionary.
+
+Input = [('Sachin', 10), ('MSD', 7), ('Kohli', 18), ('Rohit', 45)]
+#Output : {'Sachin': 10, 'MSD': 7, 'Kohli': 18, 'Rohit': 45}
+dict_1 = dict(Input)
+print(dict_1)
+    
+    
+Q93. Write a Python program to create a list of tuples from given list having number and its cube in each tuple.
+
+Input: list = [9, 5, 6]
+Output: [(9, 729), (5, 125), (6, 216)]
+    
+lst = [9, 5, 6]
+
+print(pow_lst)
+for i in lst :
+    pow_lst.append((i,pow(i,3)))
+pow_lst=[]
+    
+Q94. Write a Python program to get all combinations of 2 tuples.
+
+Input : test_tuple1 = (7, 2), test_tuple2 = (7, 8)
+Output : [(7, 7), (7, 8), (2, 7), (2, 8), (7, 7), (7, 2), (8, 7), (8, 2)]
+    
+tuple1 = (7, 2)
+tuple2 = (7, 8)
+print("First tuple : " + str(tuple1))
+print("Second tuple : " + str(tuple2))
+
+# finding all pair Combination of tuples 
+pairCombi = [] 
+for val1 in tuple1:
+    for val2 in tuple2:
+        tup = [val1, val2]
+        pairCombi.append(tuple(tup))
+
+for val1 in tuple2:
+    for val2 in tuple1:
+        tup = [val1, val2]
+        pairCombi.append(tuple(tup))
+
+print("All pair Combinations are  : " + str(pairCombi))
+Q95. Write a Python program to sort a list of tuples by second item.
+
+Input : [('for', 24), ('Geeks', 8), ('Geeks', 30)] 
+Output : [('Geeks', 8), ('for', 24), ('Geeks', 30)]
+    
+Q96. Write a python program to print below pattern.
+
+* 
+* * 
+* * * 
+* * * * 
+* * * * * 
+
+def pypart(n):
+     for i in range(0, n):
+            for j in range(0, i+1):
+                print("* ",end="")
+        print("\r")
+n = 5
+pypart(n)
+
+Q97. Write a python program to print below pattern.
+
+    *
+   **
+  ***
+ ****
+*****
+n=5
+i=0
+while(i<=n):
+    print(" " * (n - i) +"*" * i)
+    i+=1
+
+Q98. Write a python program to print below pattern.
+
+
+    * 
+   * * 
+  * * * 
+ * * * * 
+* * * * * 
+
+def triangle(n):
+    k = n - 1
+    for i in range(0, n):
+        for j in range(0, k):
+            print(end=" ")
+     
+        k = k - 1
+        for j in range(0, i+1):
+            print("* ", end="")
+        print("\r")
+n = 5
+triangle(n)
+
+Q99. Write a python program to print below pattern.
+
+1 
+1 2 
+1 2 3 
+1 2 3 4 
+1 2 3 4 5
+
+def contnum(n):
+    num = 1
+    for i in range(0, n):
+        for j in range(0, i+1):
+            print(num, end=" ")
+            num = num + 1
+        print("\r")
+n = 5
+contnum(n)
+
+Q100. Write a python program to print below pattern.
+
+A 
+B B 
+C C C 
+D D D D 
+E E E E E 
+
+def alphapat(n):
+    num = 65
+    for i in range(0, n):
+     
+        for j in range(0, i+1):
+            ch = chr(num)
+            print(ch, end=" ")
+        num = num + 1
+        print("\r")
+
+n = 5
+alphapat(n)
